@@ -1,0 +1,1 @@
+putchar as main
