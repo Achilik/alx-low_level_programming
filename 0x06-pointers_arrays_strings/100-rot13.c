@@ -1,24 +1,26 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * print_number - Prints an integer.
- * @n: The integer to be printed.
+ * rot13 - function that encodes a string using rot13.
+ * @s: string to encode
+ *
+ * Return: a pointer to sear
  */
-
-void print_number(int n)
+char *rot13(char *s)
 {
-	unsigned int num = n;
+	int i = 0;
 
-	if (n < 0)
-
+	while (s[i] != '\0')
 	{
-		_putchar('-');
-		num = -num;
+		while (((s[i] >= 'a' && s[i] <= 'm') || (s[i] >= 'A' && s[i] <= 'M')))
+		{
+			s[i] += 13;
+			i++;
+		}
+		if ((s[i] >=  'n' && s[i] <= 'z') || (s[i] >=  'N' && s[i] <= 'Z'))
+			s[i] -= 13;
+		i++;
 	}
-
-	if ((num / 10) > 0)
-
-		print_number(num / 10);
-
-	_putchar((num % 10) + '0');
+	return (s);
 }
