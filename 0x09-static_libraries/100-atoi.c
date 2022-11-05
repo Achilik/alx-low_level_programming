@@ -22,7 +22,9 @@ int _atoi(char *s)
 
 			m *= -1;
 		i++;
+
 	}
+
 	j = i;
 
 	while ((*(s + j) >= '0') && (*(s + j) <= '9'))
