@@ -31,15 +31,12 @@ long int numstrchk(char *s)
 	{
 		_prntstr("Error\n");
 		exit(98);
-
 	}
 	while (*s)
 	{
 		if (*s < '0' || *s > '9')
 		{
-
 			_prntstr("Error\n");
-
 			exit(98);
 		}
 		*s -= '0';
@@ -72,11 +69,9 @@ void *_calloc_buffer(long int num, long int size)
 	}
 	size = size * num;
 	ptr = ret;
-
 	ptr[--size] = 0;
 	while (size--)
 		ptr[size] = '0';
-
 	return (ret);
 }
 
@@ -94,11 +89,9 @@ char *trimzero(char *s)
 {
 
 	while (*s == '0')
-
 		if (*(s + 1) != 0)
 			s++;
 		else
-
 			break;
 	return (s);
 }
@@ -146,16 +139,12 @@ int main(int ac, char **av)
 				res[i - 1]++;
 			}
 		}
-
 	if (*res == '0')
-
 		_prntstr(res + 1);
 	else
 		_prntstr(res);
 
 	_putchar('\n');
-
 	free(res);
-
 	return (0);
 }
