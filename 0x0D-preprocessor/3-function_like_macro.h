@@ -1,7 +1,15 @@
-#ifndef _3_FUNCTION_LIKE_MACRO_H
-#define _3_FUNCTION_LIKE_MACRO_H
+#ifndef FUNCLIKEH
 
-#define ABS(X) ((X) < 0 ? (-X) : (X))
+#define FUNCLIKEH
+
+
+
+#define ABS(X) ((X) < 0 ? -(X) : (X))
+
+
+
+typedef int asdf;
+
+
 
 #endif
-
