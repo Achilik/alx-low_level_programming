@@ -1,23 +1,35 @@
-i#include "lists.h"
-#include <stdio.h>
+#include "lists.h"
 
+
+size_t step_through(const list_t *);
 /**
- * list_len - returns number of nodes starting at element h
+ * list_len - find the len of a list
+ * @h: pointer to a list_t
  *
- * @h: first node of linked list to count from
- *
- * Return: number of nodes printed
+ * Return: the lenth of the list.
  */
 size_t list_len(const list_t *h)
 {
-	size_t len = 0;
-
-	if (h == NULL)
+	if (!h)
 		return (0);
-	while (h != NULL)
-	{
-		len++;
-		h = h->next;
-	}
-	return (len);
+
+/* Assuming that since the list isn't null there is */
+/* one ele to account for */
+
+	if (!h->next)
+		return (1);
+	return (1 + step_through(h));
+}
+
+/**
+ * step_through - step through the list.
+ * @h: a pointer to a list_t
+ *
+ * Return: a count for every step through the list.
+ */
+size_t step_through(const list_t *h)
+{
+	if (!h->next)
+		return (0);
+	return (1 + step_through(h->next));
 }
